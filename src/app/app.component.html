@@ -191,7 +191,7 @@
   }
 
   .terminal pre {
-    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
     color: white;
     padding: 0 1rem 1rem;
     margin: 0;
@@ -235,17 +235,17 @@
     align-items: center;
     font-size: 12px;
     padding: 3px 10px;
-    border: 1px solid rgba(27,31,35,.2);
+    border: 1px solid rgba(27, 31, 35, .2);
     border-radius: 3px;
-    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
     margin-left: 4px;
     font-weight: 600;
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   }
 
   .github-star-badge:hover {
-    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
-    border-color: rgba(27,31,35,.35);
+    background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
+    border-color: rgba(27, 31, 35, .35);
     background-position: -.5em;
   }
 
@@ -253,6 +253,19 @@
     height: 16px;
     width: 16px;
     margin-right: 4px;
+  }
+
+  .navbar {
+    background-color: #e60000;
+    border-color: #e60000;
+  }
+
+  .nav.navbar-nav.navbar-right li a {
+    color: #ffffff;
+  }
+
+  .white-text-color {
+    color: #ffffff,
   }
 
   svg#clouds {
@@ -263,11 +276,10 @@
     width: 1920px;
   }
 
-
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
 
-    .card-container > *:not(.circle-link) ,
+    .card-container>*:not(.circle-link),
     .terminal {
       width: 100%;
     }
@@ -280,6 +292,8 @@
     .card.highlight-card span {
       margin-left: 72px;
     }
+
+
 
     svg#rocket-smoke {
       right: 120px;
@@ -296,46 +310,51 @@
 </style>
 
 <!-- Toolbar -->
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-    <div class="container-fluid px-0">
-      <div class="row w-100">
-        <div class="col-2">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation" (click)="isShown = !isShown" >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-  
-        <div class="col-10">
-          <div class="collapse justify-content-end navbar-collapse" [ngClass]="{ 'show': isShown }" id="navbarTogglerDemo03">
-            <ul class="navbar-nav mt-2 mt-lg-0">
-              <li class="nav-item active">
-                <a class="nav-link" href="#" (click)="isShown = false" >Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" routerLink="/upload/users" (click)="isShown = false" >Upload users</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" (click)="isShown = false" >Portfolio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" (click)="isShown = false" >Book Me</a>
-              </li>
-            </ul>
-          </div>
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="#">
+    <img src="http://placehold.it/150x50?text=Logo" alt="">
+  </a>
+  <div class="container-fluid px-0">
+    <div class="row w-100">
+      <!-- <div class="col-2">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+          aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation"
+          (click)="isShown = !isShown">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div> -->
+
+      <div class="col-10">
+        <div class="collapse justify-content-start navbar-collapse" [ngClass]="{ 'show': isShown }"
+          id="navbarTogglerDemo03">
+          <ul class="navbar-nav mt-2 mt-lg-0 white-text-color">
+            <li class="nav-item active">
+              <a class="nav-link white-text-color" href="#" (click)="isShown = false">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/upload/users" (click)="isShown = false">Upload users</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" (click)="isShown = false">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" (click)="isShown = false">Book Me</a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-  </nav>
-  <div class="alert alert-primary" role="alert">
-      A simple primary alert—check it out!
-    </div>
+  </div>
+</nav>
+<div class="alert alert-primary" role="alert">
+  A simple primary alert—check it out!
+</div>
 
 
 <div class="content" role="main">
 
   <!-- Highlight Card -->
 
-    
   <router-outlet></router-outlet>
 </div>
 
@@ -346,6 +365,3 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
-

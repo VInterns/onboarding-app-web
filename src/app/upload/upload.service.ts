@@ -18,5 +18,11 @@ export class UploadService {
     debugger;
     return this.http.post<any>('http://localhost:85/api/account/bulkRegister',users);
   };
+
+
+  // getAllUsers():Observable<any>{
+  //   return this.http.get<any>('http://localhost:85/api/account/users');
+  
+  // }
   
 }
