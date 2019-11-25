@@ -1,0 +1,24 @@
+<p class="pl-3">Newcomers User Table</p>
+
+<div class="row col-xl-12">
+    <div class="col">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col-1">#</th>
+                    <th scope="col-4">E-MAIL</th>
+                    <th scope="col-4">PROGRESS</th>
+                    <th scope="col-3">DEPARTMENT</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let user of users">
+                <tr>
+                    <th scope="row">{{user.id}}</th>
+                    <td>{{user.email}}</td>
+                    <td>{{user.lastSection}}</td>
+                    <td>{{user.department}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

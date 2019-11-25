@@ -312,7 +312,7 @@
 <!-- Toolbar -->
 <nav class="navbar navbar-expand-lg navbar-dark">
   <a class="navbar-brand" href="#">
-    <img src="http://placehold.it/150x50?text=Logo" alt="">
+    <img src="../assets/images/vodaLogoSmall.png" alt="">
   </a>
   <div class="container-fluid px-0">
     <div class="row w-100">
@@ -335,7 +335,7 @@
               <a class="nav-link" routerLink="/upload/users" (click)="isShown = false">Upload users</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" (click)="isShown = false">Portfolio</a>
+              <a class="nav-link" routerLink="/users/list-users" (click)="isShown = false">Users</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" (click)="isShown = false">Book Me</a>
@@ -346,12 +346,8 @@
     </div>
   </div>
 </nav>
-<div class="alert alert-primary" role="alert">
-  A simple primary alert—check it out!
-</div>
 
-
-<div class="content" role="main">
+<div class="container pt-4" role="main">
 
   <!-- Highlight Card -->
 
