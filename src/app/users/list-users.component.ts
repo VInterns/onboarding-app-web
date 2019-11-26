@@ -12,38 +12,18 @@ import { Observable } from 'rxjs';
 })
 export class ListUsersComponent implements OnInit {
 
-  // users: User[] = [
-  //   {
-  //     id: 1,
-  //     fullName: 'Osama',
-  //     email: 'osama@gmail.com',
-  //     department: 'IT',
-  //     lastSection: 'Organisation'
-  //   },
-  //   {
-  //     id: 2,
-  //     fullName: 'Osama',
-  //     email: 'osama@gmail.com',
-  //     department: 'IT',
-  //     lastSection: 'Organisation'
-  //   },
-  //   {
-  //     id: 3,
-  //     fullName: 'Osama',
-  //     email: 'osama@gmail.com',
-  //     department: 'IT',
-  //     lastSection: 'Organisation'
-  //   },
-  // ];
 
-
-  users: User[] = [];
+  users: any;
 
 
   constructor(private userService: UsersService) { }
 
-  ngOnInit(): Observable<any> {
-    this .users  = this.userService.getUsers();
+  ngOnInit() {
+      this.userService.getUsers().subscribe(data => {
+        this.users = data;
+        console.log(this.users);
+      });
+    // usersResponce.
   }
 
 
