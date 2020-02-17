@@ -8,12 +8,14 @@ import { UploadComponent } from './upload/upload.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ListUsersComponent } from './users/list-users.component';
 import { UsersService } from './users/users.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UploadComponent,
     ListUsersComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

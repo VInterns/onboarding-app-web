@@ -1,0 +1,61 @@
+
+<div class="container pt-4" role="main">
+    <div class="split left">
+      <img src="../assets/images/vodaLogoSmall.png" alt="">
+      <div class="upper_right_img"><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+  
+  <div id="id01" class="modal">
+    
+    <form class="modal-content animate" action="http://localhost:3050" method="post">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="../assets/images/vodaLogo.png" alt="Vodafone logo" class="centered_logo">
+      </div>
+  
+      <div class="container">
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required>
+  
+        <label for="passsword"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+          
+        <button type="submit">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+  
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="/upload/users">password?</a></span>
+      </div>
+    </form>
+  </div></div>
+      <div class="centered">
+        <img src="../assets/images/vodaLogoLarge.png" alt="Vodafone Logo">
+      </div>
+  
+  
+  
+      <div class="split right">
+        <div class="centered">
+          <h1>Create Account</h1>
+          <p>Please insert your organizational details below</p>
+      
+          <input type="text" placeholder="Full Name" name="name" required>
+          <input type="text" placeholder="Organization E-mail" name="organizationEmail" required>
+          <input type="text" placeholder="Password" name="password" required>
+          <input type="text" placeholder="Confirm Password" name="confirmPassword" required>
+          <input type="submit" value="Request Access">
+          
+        </div>
+  
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+        var username = req.model.username;
+        var password = req.model.password;
+        console.log(username);
+        </script>

@@ -509,9 +509,9 @@ span.psw {
         <div class="collapse justify-content-start navbar-collapse" [ngClass]="{ 'show': isShown }"
           id="navbarTogglerDemo03">
           <ul class="navbar-nav mt-2 mt-lg-0 white-text-color">
-            <li class="nav-item active">
+            <!--><li class="nav-item active">
               <a class="nav-link white-text-color" href="#" (click)="isShown = false">Home</a>
-            </li>
+            </li>--->
             <li class="nav-item">
               <a class="nav-link" routerLink="/upload/users" (click)="isShown = false">Upload users</a>
             </li>
@@ -519,7 +519,7 @@ span.psw {
               <a class="nav-link" routerLink="/users/list-users" (click)="isShown = false">Users</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" (click)="isShown = false">Book Me</a>
+              <a class="nav-link" href="#" (click)="isShown = false">logout</a>
             </li>
           </ul>
         </div>
@@ -528,68 +528,20 @@ span.psw {
   </div>
 </nav>
 
-<div class="container pt-4" role="main">
-  <div class="split left">
-    <img src="../assets/images/vodaLogoSmall.png" alt="">
-    <div class="upper_right_img"><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
-<div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="/action_page.php" method="post">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="../assets/images/vodaLogo.png" alt="Vodafone logo" class="centered_logo">
-    </div>
-
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-        
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
-</div></div>
-    <div class="centered">
-      <img src="../assets/images/vodaLogoLarge.png" alt="Vodafone Logo">
-    </div>
-
-
-
-    <div class="split right">
-      <div class="centered">
-        <h1>Create Account</h1>
-        <p>Please insert your organizational details below</p>
-    
-        <input type="text" placeholder="full name" name="name" required>
-        <input type="text" placeholder="organization email" name="organizationEmail" required>
-        <input type="text" placeholder="password" name="password" required>
-        <input type="text" placeholder="confirm password" name="confirmPassword" required>
-        <input type="submit" value="Request Access">
-        
-      </div>
-
-  </div>
   <script>
     // Get the modal
     var modal = document.getElementById('id01');
+    var username = req.model.username;
+    var password = req.model.password;
+    console.log(username);
     
     </script>
 
   <!-- Highlight Card -->
 
   <router-outlet></router-outlet>
-</div>
+
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
