@@ -1,28 +1,19 @@
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http'
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import {
+  HttpClient,
+  HttpHeaders,
+  HttpClientModule
+} from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class UploadService {
-
-  constructor(private http: HttpClient) { }
-
-  // getAllEmps():Observable<any[]>{
-  //   return this.http.post<any[]>(this.baseUrl+'Users', users);
-  // };
-
+  constructor(private http: HttpClient) {}
 
   uploadUsers(users: any): Observable<any> {
     // debugger;
-    return this.http.post<any>('http://localhost:85/api/account/bulkRegister', users);
+    return this.http.post<any>("api/account/bulkRegister", users);
   }
-
-
-  // getAllUsers():Observable<any>{
-  //   return this.http.get<any>('http://localhost:85/api/account/users');
-
-  // }
-
 }
