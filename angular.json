@@ -130,5 +130,8 @@
       }
     }
   },
-  "defaultProject": "onboarding-portal-admin"
+  "defaultProject": "onboarding-portal-admin",
+  "cli": {
+    "analytics": false
+  }
 }

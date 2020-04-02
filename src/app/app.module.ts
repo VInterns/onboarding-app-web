@@ -8,6 +8,7 @@ import { UploadComponent } from './upload/upload.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ListUsersComponent } from './users/list-users.component';
 import { UsersService } from './users/users.service';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UsersService } from './users/users.service';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FlexLayoutModule
   ],
   providers: [
     UsersService
