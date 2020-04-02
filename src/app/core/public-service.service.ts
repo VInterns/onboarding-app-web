@@ -6,34 +6,34 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class PublicService{
+export class PublicService {
 
   constructor(private http: HttpClient) { }
 
-    // get all
-    getAll(apiController: string,action?:string): Observable<any[]> {
-      if (action) {
-        return this.http.get<any[]>(environment.serverUrl + apiController + '/' + action)
-      }
-      else{
+  // get all
+  getAll(apiController: string, action?: string): Observable<any[]> {
+    if (action) {
+      return this.http.get<any[]>(environment.serverUrl + apiController + '/' + action)
+    } else {
       return this.http.get<any[]>(environment.serverUrl + apiController,
         // { headers: { Authorization: "Bearer " + localStorage.getItem("Token") } }
-      )};
+      );
     }
+  }
 
-    // add
-    post(data: any, apiController: string, action?: string): Observable<any> {
-      if (action) {
-        return this.http.post<any>(
-          environment.serverUrl + apiController + '/' + action, data);
-      } else {
-        return this.http.post<any>(environment.serverUrl + apiController, data);  
-      }
-    }
-  
-     // update
-    put(data: any, apiController: string, action?: string): Observable<any> {
-      return this.http.put<any>(
+  // add
+  post(data: any, apiController: string, action?: string): Observable<any> {
+    if (action) {
+      return this.http.post<any>(
         environment.serverUrl + apiController + '/' + action, data);
+    } else {
+      return this.http.post<any>(environment.serverUrl + apiController, data);
     }
+  }
+
+  // update
+  put(data: any, apiController: string, action?: string): Observable<any> {
+    return this.http.put<any>(
+      environment.serverUrl + apiController + '/' + action, data);
+  }
 }
