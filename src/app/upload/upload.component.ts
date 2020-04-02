@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as XLSX from 'xlsx';
-import { UploadService } from './upload.service';
+import { PublicService } from '../core/public-service.service';
 
 @Component({
   selector: 'app-upload',
@@ -9,7 +9,7 @@ import { UploadService } from './upload.service';
 })
 export class UploadComponent implements OnInit {
 
-  constructor(private uploadService:UploadService) {
+  constructor(private publicService:PublicService) {
 
    }
 
@@ -32,11 +32,14 @@ export class UploadComponent implements OnInit {
         const sheet = workBook.Sheets[name];
         initial[name] = XLSX.utils.sheet_to_json(sheet);
         
-        this.uploadService.uploadUsers(initial).subscribe(res => {
-          debugger;
-          console.log('resonse of api ',res);
-          }); 
+        // this.uploadService.uploadUsers(initial).subscribe(res => {
+        //   debugger;
+        //   console.log('resonse of api ',res);
+        //   }); 
 
+        this.publicService.post(initial,'account','bulkRegister').subscribe(res => {
+             console.log('resonse of api ',res);
+             })
           //calling the uploadUsers Service 
           return initial;
         }, {});
