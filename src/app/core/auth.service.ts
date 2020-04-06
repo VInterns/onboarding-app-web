@@ -29,12 +29,11 @@ export class AuthService implements CanActivate {
   }
   logout() {
     debugger;
-    console.log('isnide logout Function()');
+    console.log('isnide logout Function()', localStorage.getItem('Email'));
     let email = JSON.parse(localStorage.getItem('Email'));
     if (email == null) {
       localStorage.clear();
       console.log('cleared local storage', localStorage.getItem('Email'));
-      // window.location.replace('http://localhost:85/api/account/login');
       window.location.replace('http://localhost:4200/login');
 
       this.http

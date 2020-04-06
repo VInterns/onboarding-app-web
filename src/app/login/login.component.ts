@@ -40,28 +40,28 @@ export class LoginComponent implements OnInit {
   }
   login() {
     debugger;
-    this._router.navigate(['users/list-users']);
+    // this._router.navigate(['users/list-users']);
     this.loader = true;
-    // this._authservice.login(this.loginModel).subscribe(
-    //   (res: any) => {
-    //     this.loader = false;
-    //     localStorage.setItem('Token', res.token);
-    //     localStorage.setItem('Email', this.loginModel.email);
-    //     console.log('logged in with token ==> ', res.token);
-    //     this._router.navigate(['users/list-users']);
-    //     this.isLoginSuccessfully = true;
-    //   },
-    //   (error: any) => {
-    //     this.loader = false;
-    //     console.log(error);
-    //     if (error.error.text == 'User Already Logged In') {
-    //       this.loginErrorMSG = error.text;
-    //     } else if (error.error.text == 'Invalid Email or password') {
-    //       this.loginErrorMSG = 'Login failed ! Invalid email or password';
-    //     } else {
-    //       this.loginErrorMSG =
-    //         'Server error when trying to connect to backend sever, please refresh page. If issue presists; please contact IT Service Desk.';
-    //     }
-    //   });
+    this._authservice.login(this.loginModel).subscribe(
+      (res: any) => {
+        this.loader = false;
+        localStorage.setItem('Token', res.token);
+        localStorage.setItem('Email', this.loginModel.email);
+        console.log('logged in with token ==> ', res.token);
+        this._router.navigate(['users/list']);
+        this.isLoginSuccessfully = true;
+      },
+      (error: any) => {
+        this.loader = false;
+        console.log(error);
+        if (error.error.text == 'User Already Logged In') {
+          this.loginErrorMSG = error.text;
+        } else if (error.error.text == 'Invalid Email or password') {
+          this.loginErrorMSG = 'Login failed ! Invalid email or password';
+        } else {
+          this.loginErrorMSG =
+            'Server error when trying to connect to backend sever, please refresh page. If issue presists; please contact IT Service Desk.';
+        }
+      });
   }
 }
