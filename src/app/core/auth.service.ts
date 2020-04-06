@@ -33,7 +33,7 @@ export class AuthService implements CanActivate {
     let email = JSON.parse(localStorage.getItem('Email'));
     if (email == null) {
       localStorage.clear();
-      console.log('cleared local storage', localStorage.getItem('Email'));
+      // console.log('cleared local storage', localStorage.getItem('Email'));
       window.location.replace('http://localhost:4200/login');
 
       this.http
@@ -75,9 +75,9 @@ export class AuthService implements CanActivate {
     debugger;
     console.log('inside canActivate function .......');
     if (this.isAuthenticated()) {
-      console.log('passed isAuthenticated()');
+      // console.log('passed isAuthenticated()');
       let email = localStorage.getItem('Email');
-      console.log('userEmail is --> ', email);
+      // console.log('userEmail is --> ', email);
       return true;
     } else {
       this.logout();
@@ -92,7 +92,7 @@ export class AuthService implements CanActivate {
   isAuthenticated(): boolean {
     debugger;
     const res = localStorage.getItem('Token') !== null && !this.isTokenExpired();
-    console.log('current token is --> ', localStorage.getItem('Token'));
+    // console.log('current token is --> ', localStorage.getItem('Token'));
 
     return res;
   }
