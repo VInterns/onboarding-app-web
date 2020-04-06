@@ -1,0 +1,102 @@
+.mainContainer
+{
+width: auto;
+height: 100vh;
+}
+  .formContainer
+  {
+    background-color:#F4F4F4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 9%;
+    width: 60vw;
+  }
+.form
+{
+    margin-top: 13vh; 
+    display: flex; 
+    flex-direction: column;
+    width: 25vw;
+}
+
+   .welcomeToVBuddy 
+   {
+     /* font-family: "Poppins";  */
+    font-size:30pt;
+    font-weight: 800;
+    font-style: normal;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #000000; 
+  }
+
+  .pleaseInsertYourL {
+    font-family: "Poppins";
+    font-size: 15pt;
+    font-weight: 500;
+    font-style: "normal";
+    letter-spacing: -0.14;
+    text-align: "center";
+    color: "#4a4d4e";
+  }
+  .formInput {
+    /* width: 30vw;
+    height: 6vh; */
+    /* margin-bottom: 2vh; */
+    /* background-color: white; */
+    /* border-radius: 8px; */
+}
+
+/* div mat-form-field-appearance-outline .mat-form-field-flex {
+  background-color: white;
+} */
+
+/* .mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline {
+  background-color: white;
+} */
+
+
+/* Border */
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  background-color: white;
+
+}
+
+  .loginButton
+{
+    /* height: 6vh; */
+    border-radius: 8px;
+    background-color: #bd0000;
+    color: white;
+    padding: 15px;
+    border-style :solid;
+}
+
+.loginImage
+{
+width: 40vw;
+}
+
+@media (max-width:768px) {
+  img.loginImage {
+    display: none;
+  }
+  div.formContainer {
+    width: 100vw;
+    height: 100vh;
+}
+form.form
+{
+    width: 60vw;
+    margin-top: 13vh; 
+
+}
+input.formInput {
+    width: 60vw;
+
+}
+div.formContainer{
+    padding-top: 20vh;
+}
+}

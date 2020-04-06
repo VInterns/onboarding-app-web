@@ -1,0 +1,27 @@
+<div flex fxLayout='row' fxLayout.lt-sm="column" class="mainContainer">
+    <img src="../../assets/images/loginImage.png" class="loginImage">
+    <div class="formContainer">
+        <h3 class="welcomeToVBuddy">Welcome to V-Buddy</h3>
+        <p class="pleaseInsertYourL">Please insert your login details below</p>
+        <form class="form" [formGroup]="loginForm" (ngSubmit)="login()">
+            <mat-form-field appearance="outline">
+                <input class="formInput" formControlName="email" [(ngModel)]="loginModel.email" matInput
+                    placeholder="Organization email">
+                <mat-error *ngIf="hasError('email', 'required')">Email is required</mat-error>
+            </mat-form-field>
+            <br *ngIf="hasError('email','required') && loginForm.controls['email']?.touched " />
+
+            <mat-form-field appearance="outline">
+                <input class="formInput" formControlName="password" type="password" [(ngModel)]="loginModel.password"
+                    matInput placeholder="Your Password">
+                <mat-error *ngIf="hasError('password', 'required')">Password is required
+                </mat-error>
+            </mat-form-field>
+            <br *ngIf="hasError('password', 'required') && loginForm.controls['password']?.touched" />
+            <button [disabled]="!loginForm.valid" class="loginButton" mat-raised-button color="warn" type="submit">
+                Sign in
+            </button>
+        </form>
+
+    </div>
+</div>
