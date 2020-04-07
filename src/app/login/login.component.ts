@@ -4,6 +4,8 @@ import { LoginModel } from './login.Model';
 import { Router } from '@angular/router';
 import { PublicService } from '../core/public-service.service';
 import { AuthService } from '../core/auth.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { SnackBarComponent } from '../shared/navbar/snack-bar/snack-bar.component';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +23,7 @@ export class LoginComponent implements OnInit {
   constructor(private _router: Router,
     private service: PublicService,
     private _authservice: AuthService,
-
+    private _snackBar: MatSnackBar
   ) {
     this.loginModel = new LoginModel();
     this.loader = false;
@@ -60,6 +62,12 @@ export class LoginComponent implements OnInit {
           this.loginErrorMSG =
             'Server error when trying to connect to backend sever, please refresh page. If issue presists; please contact IT Service Desk.';
         }
+
+        this._snackBar.openFromComponent(SnackBarComponent, {
+          data: this.loginErrorMSG,
+          panelClass:'snackbar',
+          duration: 10000
+        });
       });
   }
 }
