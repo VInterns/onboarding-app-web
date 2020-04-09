@@ -12,11 +12,14 @@ export class PublicService {
 
   // get all
   getAll(apiController: string, action?: string): Observable<any[]> {
+    localStorage.getItem('Token');
     if (action) {
-      return this.http.get<any[]>(environment.serverUrl + apiController + '/' + action)
+      return this.http.get<any[]>(environment.serverUrl + apiController + '/' + action,
+        { headers: { Authorization: 'Bearer ' + localStorage.getItem('Token') } }
+      );
     } else {
       return this.http.get<any[]>(environment.serverUrl + apiController,
-        // { headers: { Authorization: "Bearer " + localStorage.getItem("Token") } }
+        { headers: { Authorization: 'Bearer ' + localStorage.getItem('Token') } }
       );
     }
   }
@@ -25,15 +28,21 @@ export class PublicService {
   post(data: any, apiController: string, action?: string): Observable<any> {
     if (action) {
       return this.http.post<any>(
-        environment.serverUrl + apiController + '/' + action, data);
+        environment.serverUrl + apiController + '/' + action, data,
+        { headers: { Authorization: 'Bearer ' + localStorage.getItem('Token') } }
+      );
     } else {
-      return this.http.post<any>(environment.serverUrl + apiController, data);
+      return this.http.post<any>(environment.serverUrl + apiController, data,
+        { headers: { Authorization: 'Bearer ' + localStorage.getItem('Token') } }
+      );
     }
   }
 
   // update
   put(data: any, apiController: string, action?: string): Observable<any> {
     return this.http.put<any>(
-      environment.serverUrl + apiController + '/' + action, data);
+      environment.serverUrl + apiController + '/' + action, data,
+      { headers: { Authorization: 'Bearer ' + localStorage.getItem('Token') } }
+    );
   }
 }
