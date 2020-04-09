@@ -4,7 +4,7 @@ import { LoginModel } from './login.Model';
 import { Router } from '@angular/router';
 import { PublicService } from '../core/public-service.service';
 import { AuthService } from '../core/auth.service';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackBarComponent } from '../shared/navbar/snack-bar/snack-bar.component';
 
 @Component({
@@ -52,11 +52,12 @@ export class LoginComponent implements OnInit {
         this.isLoginSuccessfully = true;
       },
       (error: any) => {
+        debugger;
         this.loader = false;
         // console.log(error);
-        if (error.error.text == 'User Already Logged In') {
+        if (error.error == 'User Already Logged In') {
           this.loginErrorMSG = error.text;
-        } else if (error.error.text == 'Invalid Email or password') {
+        } else if (error.error == 'Invalid NT or Password.') {
           this.loginErrorMSG = 'Login failed ! Invalid email or password';
         } else {
           this.loginErrorMSG =
@@ -65,7 +66,7 @@ export class LoginComponent implements OnInit {
 
         this._snackBar.openFromComponent(SnackBarComponent, {
           data: this.loginErrorMSG,
-          panelClass:'snackbar',
+          panelClass: 'snackbar',
           duration: 10000
         });
       });

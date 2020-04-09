@@ -1,19 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import * as XLSX from 'xlsx';
 import { PublicService } from '../core/public-service.service';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackBarComponent } from '../shared/navbar/snack-bar/snack-bar.component';
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
-  styleUrls: ['./upload.component.css']
+  styleUrls: ['./upload.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class UploadComponent implements OnInit {
 
-  constructor(private publicService:PublicService,
+  constructor(private publicService: PublicService,
     private _snackBar: MatSnackBar) {
-
-   }
+  }
 
   ngOnInit() {
   }
@@ -33,24 +33,24 @@ export class UploadComponent implements OnInit {
       jsonData = workBook.SheetNames.reduce((initial, name) => {
         const sheet = workBook.Sheets[name];
         initial[name] = XLSX.utils.sheet_to_json(sheet);
-        
+
         // this.uploadService.uploadUsers(initial).subscribe(res => {
         //   debugger;
         //   console.log('resonse of api ',res);
         //   });
 
-        this.publicService.post(initial,'account','bulkRegister').subscribe(res => {
+        this.publicService.post(initial, 'account', 'bulkRegister').subscribe(res => {
           this._snackBar.openFromComponent(SnackBarComponent, {
             data: 'Data inserted successfully',
-            panelClass:'snackbar',
+            panelClass: 'snackbar',
             duration: 10000
           });
-             console.log('resonse of api ',res);
-             })
-          //calling the uploadUsers Service 
-          return initial;
-        }, {});
-      
+          console.log('resonse of api ', res);
+        })
+        //calling the uploadUsers Service 
+        return initial;
+      }, {});
+
 
       // const dataString = JSON.stringify(jsonData);
       // document.getElementById('output').innerHTML = dataString.slice(0, 300).concat("...");
