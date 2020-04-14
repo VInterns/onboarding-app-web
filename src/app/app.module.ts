@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material';
 import { SnackBarComponent } from './shared/navbar/snack-bar/snack-bar.component';
+import { RatingCountComponent } from './rating-count/rating-count.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { SnackBarComponent } from './shared/navbar/snack-bar/snack-bar.component
     LoginComponent,
     NavbarComponent,
     SnackBarComponent,
+    RatingCountComponent,
   ],
   imports: [
     BrowserModule,

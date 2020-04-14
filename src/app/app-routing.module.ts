@@ -6,6 +6,7 @@ import { ListUsersComponent } from './users/list-users.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AuthService } from './core/auth.service';
+import { RatingCountComponent } from './rating-count/rating-count.component';
 // const routes: Routes = [
 //   // {path:'',component:TestComponent},
 //   { path: 'login', component: LoginComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
     children: [
       { path: 'upload/users', component: UploadComponent, canActivate: [AuthService] },
       { path: 'users/list', component: ListUsersComponent, canActivate: [AuthService] },
+      { path: 'survey', component: RatingCountComponent, canActivate: [AuthService] },
     ]
   }
 
