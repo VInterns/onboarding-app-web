@@ -21,14 +21,14 @@ export class AuthService implements CanActivate {
   ) { }
 
   login(user: LoginModel) {
-    debugger;
+  //  debugger;
     return this.http.post<LoginModel>(
       environment.serverUrl + 'account/login/admin',
       user
     );
   }
   logout() {
-    debugger;
+  //  debugger;
     console.log('isnide logout Function()', localStorage.getItem('Email'));
     let email = JSON.parse(localStorage.getItem('Email'));
     if (email == null) {
@@ -72,7 +72,7 @@ export class AuthService implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    debugger;
+   // debugger;
     console.log('inside canActivate function .......');
     if (this.isAuthenticated()) {
       // console.log('passed isAuthenticated()');
@@ -90,7 +90,7 @@ export class AuthService implements CanActivate {
    * check for expiration and if token is still existing or not
    */
   isAuthenticated(): boolean {
-    debugger;
+    //debugger;
     const res = localStorage.getItem('Token') !== null && !this.isTokenExpired();
     // console.log('current token is --> ', localStorage.getItem('Token'));
 
@@ -100,7 +100,7 @@ export class AuthService implements CanActivate {
   // simulate jwt token is valid
   // https://github.com/theo4u/angular4-auth/blob/master/src/app/helpers/jwt-helper.ts
   isTokenExpired(): boolean {
-    debugger;
+   // debugger;
     let token = this.decode();
     return token.exp ? false : true;
   }
@@ -109,7 +109,7 @@ export class AuthService implements CanActivate {
    */
 
   decode() {
-    debugger;
+   // debugger;
     return decode(localStorage.getItem('Token'));
   }
 }

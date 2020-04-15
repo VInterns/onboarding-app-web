@@ -24,6 +24,8 @@ import {MatInputModule} from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 
+import { RatingCountComponent } from './rating-count/rating-count.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import {MatSelectModule} from '@angular/material/select';
     SnackBarComponent,
     SurveyRatingCardsComponent,
     StarRatingComponent,
+
+    RatingCountComponent,
   ],
   imports: [MatIconModule,
     BrowserModule,
@@ -51,10 +55,11 @@ import {MatSelectModule} from '@angular/material/select';
     MatCardModule,
     MatPaginatorModule,
     MatSelectModule,
-    MatSortModule
+    MatSortModule,
     // MatSelectModule,
     // MatFormField,
     //  MatSortModule,
+    MatProgressBarModule
   ],
   providers: [
     UsersService
