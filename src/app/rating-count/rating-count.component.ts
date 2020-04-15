@@ -7,10 +7,14 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class RatingCountComponent implements OnInit {
+  widthExp: number;
 
-  constructor() { }
+  constructor() { 
+   this.widthExp =40;
+  }
 
   ngOnInit(): void {
   }
+
 
 }
