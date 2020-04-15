@@ -11,14 +11,14 @@ export class PublicService {
   constructor(private http: HttpClient) { }
 
   // get all
-  getAll(apiController: string, action?: string): Observable<any[]> {
+  getAll(apiController: string, action?: string): Observable<any> {
     localStorage.getItem('Token');
     if (action) {
-      return this.http.get<any[]>(environment.serverUrl + apiController + '/' + action,
+      return this.http.get<any>(environment.serverUrl + apiController + '/' + action,
         { headers: { Authorization: 'Bearer ' + localStorage.getItem('Token') } }
       );
     } else {
-      return this.http.get<any[]>(environment.serverUrl + apiController,
+      return this.http.get<any>(environment.serverUrl + apiController,
         { headers: { Authorization: 'Bearer ' + localStorage.getItem('Token') } }
       );
     }
