@@ -11,4 +11,5 @@ export class User {
     useful?: number;
     enggaging?: number;
     comment?: string;
+    commentedOn: Date
 }

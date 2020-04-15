@@ -1,0 +1,60 @@
+.example-card {
+    max-width: 400px;
+    margin-bottom: 2rem;
+  }
+
+  .example-header-image {
+    background-image: url('/assets/images/shape2.png');
+    background-size: cover;
+  }
+  
+  p{
+    padding-left: 55px;
+    color: 	#626162;
+  }
+
+  .Rectangle-Copy-2 {
+    width: 80%;
+    height: 2px;
+    margin: 10px 0;
+    background-color: #f4f4f4;
+  }  
+
+  .line{
+    align-items: center;
+    justify-content: center;
+    margin-left: 30px;
+  }
+  
+  .hrline{
+    width: 90%;
+  }
+
+  mat-card-subtitle{
+    font-family: sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+  }
+
+  .material-icons {
+    font-size: 16px;
+  }
+
+  .imgContainer{
+    width: 50%;
+    height: 50%;
+  }
+
+
+  .mat-card-subtitle {
+    display: block;
+    margin-bottom: 10px;
+}
+
+hr {
+  margin-top: 0;
+  margin-bottom: 0.5rem;}
+
+ .sort{
+  padding-right: 5rem;
+ }

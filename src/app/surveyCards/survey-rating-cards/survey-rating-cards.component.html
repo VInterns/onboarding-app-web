@@ -1,0 +1,46 @@
+<div flex fxLayout='row' fxLayoutAlign="end end" fxLayout.lt-sm="row"  >
+<mat-form-field appearance="outline" class="sort">
+  <mat-label>Sort Ratings BY</mat-label>
+  <mat-select (selectionChange)="changeSortedColumn($event.value)">
+    <mat-option *ngFor="let sortItem of sortList" [value]="sortItem.value" >
+        {{sortItem.name}}
+    </mat-option>
+</mat-select>
+</mat-form-field>
+</div>
+
+<div flex fxLayout='row wrap' matSort fxLayoutGap="2rem" fxLayout.lt-sm="column" class="cardcontainer" >
+  <!-- <div> -->
+  <mat-card class="example-card" fxFlex.xs="100%" fxFlex.sm="35%" fxFlex.md="20%" fxFlex.lg="45%"  
+  *ngFor="let user of obs | async" >
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image">
+        <!-- <img src="assets/images/shape2.png"> -->
+      </div>
+      <mat-card-title> {{user.fullName}} </mat-card-title>
+      <mat-card-subtitle>
+        <span class="spn">Engagement &nbsp; </span>
+      <app-star-rating rating="{{user.enggaging}}"  [starCount]="starCount" [color]="starColor" ></app-star-rating>
+      </mat-card-subtitle>
+
+      <mat-card-subtitle>
+        <span class="spn">Useful &nbsp; </span>
+      <app-star-rating rating="{{user.useful}}"  [starCount]="starCount" [color]="starColor" ></app-star-rating>
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <div class="line">
+      <hr class="hrline">
+    </div>
+
+    <mat-card-content>
+      <p>
+        {{user.comment}} 
+      </p>
+    </mat-card-content>
+  </mat-card>
+<!-- </div> -->
+
+<mat-paginator [pageSizeOptions]="[2,4,6]"></mat-paginator>
+</div>
+
