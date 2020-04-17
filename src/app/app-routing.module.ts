@@ -27,7 +27,7 @@ const routes: Routes = [
     children: [
       { path: 'upload/users', component: UploadComponent, canActivate: [AuthService] },
       { path: 'users/list', component: ListUsersComponent, canActivate: [AuthService] },
-      { path: 'survey', component: SurveyRatingCardsComponent , canActivate: [AuthService] },
+      { path: 'survey/list', component: SurveyRatingCardsComponent , canActivate: [AuthService] },
     ]
   }
 
